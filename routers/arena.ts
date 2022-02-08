@@ -1,13 +1,13 @@
 import { Router } from "express";
 
-export const warriorRouter = Router();
+export const arenaRouter = Router();
 
-warriorRouter
+arenaRouter
 
-    .get('/add-form', (req,res) => {
-        res.send('Add warrior form');
+    .get('/fight-form', (req,res) => {
+        res.send('Fight form');
     })
 
-    .post('/',(req,res) => {
-        res.send('Add warrior');
+    .post('/fight',(req,res) => {
+        res.send('Fight');
     })
