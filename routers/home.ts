@@ -5,5 +5,5 @@ export const homeRouter = Router();
 homeRouter
 
     .get('/', (req,res) => {
-        res.send('Helloooo')
+        res.render('home/home');
     })

@@ -25,7 +25,7 @@ app.set('view engine', '.hbs');
 app.use('/', homeRouter);
 app.use('/warrior', warriorRouter);
 app.use('/arena', arenaRouter);
-app.use('hall-of-fame', hallOfFameRouter);
+app.use('/hall-of-fame', hallOfFameRouter);
 
 // app.use(handleError)
 

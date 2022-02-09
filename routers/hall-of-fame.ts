@@ -6,5 +6,5 @@ hallOfFameRouter
 
 
     .get('/', (req,res) => {
-        res.send('The best warrior list');
+        res.render('hall-of-fame/list');
     })
