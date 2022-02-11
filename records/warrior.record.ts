@@ -44,7 +44,7 @@ export class WarriorRecord {
         this.wins = wins ?? 0;
     }
 
-    async insert(): Promise<string | undefined>{
+    async insert(): Promise<string>{
 
         await pool.execute("INSERT INTO `warriors`(`id`,`name`,`power`,`defence`,`stamina`,`agility`,`wins`)VALUES(:id,:name, :power, :defence, :stamina, :agility, :wins)", {
             id: this.id,
@@ -60,7 +60,8 @@ export class WarriorRecord {
     }
 
     async update(): Promise<void>{
-        await pool.execute("UPDATE `warriors` SET `wins` = :wins", {
+        await pool.execute("UPDATE `warriors` SET `wins` = :wins WHERE id = :id", {
+            id: this.id,
             wins: this.wins,
         });
     }
@@ -70,7 +71,7 @@ export class WarriorRecord {
             id,
         }) as WarriorRecordResults;
 
-        return results.length === 0 ? null : results[0];
+        return results.length === 0 ? null : new WarriorRecord(results[0]) ;
     }
 
     static async listAll(): Promise<WarriorRecord[]>{
