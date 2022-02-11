@@ -3,12 +3,10 @@
     "noImplicitAny": true,
     "preserveConstEnums": true,
     "sourceMap": true,
-    "target": "ES6",
+    "target": "es6",
     "downlevelIteration": true,
     "lib": ["es6", "dom.iterable"],
     "outDir": "dist",
-    "strict": true,
-    "strictPropertyInitialization": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "moduleResolution": "Node"
